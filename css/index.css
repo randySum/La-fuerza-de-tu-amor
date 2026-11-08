@@ -75,6 +75,158 @@
     color: var(--blue-dark);
 }
 
+/* ==========================
+   NAVBAR
+========================== */
+
+.page .site-navbar {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    padding: 25px 8%;
+    background: rgba(42, 70, 86, 0.20);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+/* LOGO */
+
+.page .site-logo {
+    color: white !important;
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+.page .site-logo:hover {
+    color: var(--blue-light) !important;
+}
+
+/* ENLACES */
+
+.page .site-navbar .nav-link {
+    color: rgba(255,255,255,0.9) !important;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 12px 16px !important;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.page .site-navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 16px;
+    bottom: 5px;
+    width: 0;
+    height: 1px;
+    background: white;
+    transition: 0.3s ease;
+}
+
+.page .site-navbar .nav-link:hover {
+    color: white !important;
+}
+
+.page .site-navbar .nav-link:hover::after {
+    width: calc(100% - 32px);
+}
+
+/* BOTÓN CONTACTO */
+
+.page .nav-contact {
+    display: inline-block;
+    padding: 12px 23px;
+    border: 1px solid rgba(255,255,255,0.8);
+    border-radius: 40px;
+    color: white !important;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.page .nav-contact:hover {
+    background: white;
+    color: var(--blue-dark) !important;
+}
+
+.page .nav-contact span {
+    margin-left: 7px;
+}
+
+/* HAMBURGUESA */
+
+.page .site-navbar .navbar-toggler {
+    border: 1px solid rgba(255,255,255,0.5);
+    padding: 8px 11px;
+    box-shadow: none;
+}
+
+.page .site-navbar .navbar-toggler:focus {
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.2);
+}
+
+/* ESCRITORIO */
+
+@media (min-width: 992px) {
+
+    .page .site-navbar .navbar-toggler {
+        display: none !important;
+    }
+
+    .page .site-navbar .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+    }
+
+}
+
+/* TABLETS Y MÓVILES */
+
+@media (max-width: 991.98px) {
+
+    .page .site-navbar {
+        padding: 20px 6%;
+    }
+
+    .page .site-navbar .navbar-collapse {
+        padding-top: 20px;
+    }
+
+    .page .site-navbar .navbar-nav {
+        align-items: flex-start !important;
+    }
+
+    .page .site-navbar .nav-link {
+        padding: 12px 0 !important;
+    }
+
+    .page .site-navbar .nav-link::after {
+        left: 0;
+    }
+
+    .page .site-navbar .nav-link:hover::after {
+        width: 100%;
+    }
+
+    .page .nav-contact {
+        margin-top: 12px;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .page .site-navbar {
+        padding: 18px 6%;
+    }
+
+    .page .site-logo {
+        font-size: 19px;
+    }
+
+}
 
 /* ==========================
    PORTADA
@@ -102,37 +254,6 @@
         rgba(57, 91, 111, 0.38),
         rgba(57, 91, 111, 0.15)
     );
-}
-
-.page .navbar {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 35px 8%;
-}
-
-.page .logo {
-    font-size: 23px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    color: white;
-}
-
-.page .nav-links {
-    display: flex;
-    gap: 35px;
-}
-
-.page .nav-links a {
-    color: white;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-.page .nav-links a:hover {
-    opacity: 0.7;
 }
 
 .page .hero-content {
