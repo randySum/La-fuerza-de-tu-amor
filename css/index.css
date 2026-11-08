@@ -1,0 +1,743 @@
+
+/* ==========================
+   VARIABLES Y CONFIGURACIÓN
+========================== */
+
+.page {
+    --blue: #B8D5E8;
+    --blue-light: #DCEAF3;
+    --blue-dark: #45677D;
+    --blue-deep: #344F60;
+    --white: #FAFBFC;
+    --beige: #EDE6DC;
+    --text: #526773;
+
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.page * {
+    box-sizing: border-box;
+}
+
+.page a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.page img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.page .section {
+    padding: 110px 8%;
+}
+
+
+/* ==========================
+   BOTONES
+========================== */
+
+.page .btn {
+    display: inline-block;
+    padding: 15px 28px;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.page .btn-primary {
+    background: var(--blue-dark);
+    color: white;
+    border: 1px solid var(--blue-dark);
+}
+
+.page .btn-primary:hover {
+    background: var(--blue-deep);
+    transform: translateY(-3px);
+}
+
+.page .btn-outline {
+    color: white;
+    border: 1px solid rgba(255,255,255,0.8);
+}
+
+.page .btn-outline:hover {
+    background: white;
+    color: var(--blue-dark);
+}
+
+
+/* ==========================
+   PORTADA
+========================== */
+
+.page .hero {
+    min-height: 750px;
+    height: 100vh;
+    max-height: 950px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-image: url("img/portada.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.page .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(39, 70, 88, 0.78),
+        rgba(57, 91, 111, 0.38),
+        rgba(57, 91, 111, 0.15)
+    );
+}
+
+.page .navbar {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 8%;
+}
+
+.page .logo {
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.page .nav-links {
+    display: flex;
+    gap: 35px;
+}
+
+.page .nav-links a {
+    color: white;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.page .nav-links a:hover {
+    opacity: 0.7;
+}
+
+.page .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: auto 0;
+    padding: 40px 10%;
+}
+
+.page .hero-subtitle {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+.page .hero-content h1 {
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.15;
+    font-weight: 400;
+    margin: 0 0 25px;
+}
+
+.page .hero-content p {
+    max-width: 550px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.9);
+}
+
+.page .hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 35px;
+}
+
+.page .hero-bottom {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 8%;
+    border-top: 1px solid rgba(255,255,255,0.25);
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+
+/* ==========================
+   ENCABEZADOS
+========================== */
+
+.page .section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 65px;
+}
+
+.page .eyebrow {
+    color: var(--blue-dark);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.page .section-heading h2,
+.page .contact-info h2 {
+    font-size: clamp(30px, 4vw, 43px);
+    font-weight: 400;
+    color: var(--blue-deep);
+    line-height: 1.3;
+    margin: 18px 0;
+}
+
+.page .heading-line {
+    width: 55px;
+    height: 2px;
+    background: var(--blue);
+    margin: 25px auto;
+}
+
+.page .section-heading > p {
+    line-height: 1.8;
+}
+
+
+/* ==========================
+   HISTORIA
+========================== */
+
+.page .history {
+    background: var(--white);
+}
+
+.page .history-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 75px;
+    align-items: center;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.page .history-image {
+    height: 480px;
+    overflow: hidden;
+    border-radius: 180px 180px 15px 15px;
+}
+
+.page .history-image img {
+    transition: transform 0.6s;
+    object-fit: cover;
+    object-position: 50% 65%;
+}
+
+.page .history-image:hover img {
+    transform: scale(1.04);
+}
+
+.page .history-text h3 {
+    color: var(--blue-deep);
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.page .history-text p {
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.page .text-link {
+    display: inline-block;
+    color: var(--blue-dark);
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+
+/* ==========================
+   PRÓXIMA REUNIÓN
+========================== */
+
+.page .next-meeting {
+    background: var(--blue-light);
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.page .meeting-card {
+    max-width: 1100px;
+    margin: auto;
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(69,103,125,0.08);
+}
+
+.page .meeting-image {
+    min-height: 470px;
+}
+
+.page .meeting-info {
+    padding: 65px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.page .meeting-info h2 {
+    color: var(--blue-deep);
+    font-size: 38px;
+    font-weight: 400;
+    margin: 20px 0;
+}
+
+.page .meeting-info > p {
+    line-height: 1.8;
+}
+
+.page .meeting-details {
+    display: flex;
+    gap: 45px;
+    margin: 30px 0;
+}
+
+.page .meeting-details div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.page .meeting-details span {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--blue-dark);
+}
+
+.page .meeting-details strong {
+    color: var(--blue-deep);
+    font-size: 14px;
+}
+
+
+/* ==========================
+   TIPOS DE REUNIONES
+========================== */
+
+.page .meetings {
+    background: var(--white);
+}
+
+.page .meeting-types {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 1050px;
+    margin: auto;
+}
+
+.page .meeting-type {
+    padding: 50px 45px;
+    border-radius: 12px;
+    background: #F1F6F9;
+    position: relative;
+    transition: 0.3s;
+}
+
+.page .meeting-type:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(69,103,125,0.1);
+}
+
+.page .meeting-type.featured {
+    background: #E3EEF5;
+}
+
+.page .meeting-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    color: var(--blue-dark);
+    margin-bottom: 30px;
+}
+
+.page .meeting-number {
+    color: #9DBACA;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.page .meeting-type h3 {
+    color: var(--blue-deep);
+    font-size: 25px;
+    font-weight: 400;
+    margin: 15px 0 25px;
+}
+
+.page .meeting-type p {
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.page .meeting-tag {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background: white;
+    color: var(--blue-dark);
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* ==========================
+   FRASE
+========================== */
+
+.page .quote-section {
+    background: var(--blue-dark);
+    padding: 100px 10%;
+    text-align: center;
+    color: white;
+}
+
+.page .quote-content {
+    max-width: 850px;
+    margin: auto;
+}
+
+.page .quote-symbol {
+    font-family: Georgia, serif;
+    font-size: 90px;
+    color: var(--blue);
+    line-height: 1;
+}
+
+.page .quote-content h2 {
+    font-size: clamp(25px, 3vw, 38px);
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.page .quote-content p {
+    color: #DCEAF3;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+
+/* ==========================
+   CONTACTO
+========================== */
+
+.page .contact {
+    background: #F4F8FA;
+}
+
+.page .contact-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 90px;
+    align-items: center;
+}
+
+.page .contact-info h2 {
+    font-size: 42px;
+}
+
+.page .contact-info p {
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.page .contact-decoration {
+    margin-top: 35px;
+    color: var(--blue-dark);
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 22px;
+}
+
+.page .contact-form {
+    padding: 45px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(69,103,125,0.06);
+}
+
+.page .contact-form h3 {
+    font-size: 27px;
+    color: var(--blue-deep);
+    font-weight: 400;
+    margin: 0 0 10px;
+}
+
+.page .contact-form > p {
+    font-size: 13px;
+    margin-bottom: 30px;
+}
+
+.page .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.page .form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--blue-deep);
+}
+
+.page .form-group input,
+.page .form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #E1E9EE;
+    background: #FAFCFD;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 13px;
+    color: var(--text);
+    outline: none;
+    transition: 0.3s;
+}
+
+.page .form-group input:focus,
+.page .form-group textarea:focus {
+    border-color: var(--blue);
+    background: white;
+}
+
+.page .form-group textarea {
+    resize: vertical;
+}
+
+.page .contact-form .btn {
+    width: 100%;
+    border: none;
+    font-family: inherit;
+}
+
+.page .form-note {
+    font-size: 11px !important;
+    text-align: center;
+    color: #82939D;
+    margin: 20px 0 0 !important;
+    line-height: 1.6;
+}
+
+
+/* ==========================
+   FOOTER
+========================== */
+
+.page .footer {
+    background: #344F60;
+    color: white;
+    padding: 70px 8% 25px;
+}
+
+.page .footer-main {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.5fr 0.7fr 1fr;
+    gap: 70px;
+    padding-bottom: 60px;
+}
+
+.page .footer h3 {
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.page .footer h4 {
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.page .footer p {
+    font-size: 13px;
+    line-height: 1.9;
+    color: #D4E2EA;
+}
+
+.page .footer-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.page .footer-navigation a {
+    font-size: 13px;
+    color: #D4E2EA;
+    transition: 0.3s;
+}
+
+.page .footer-navigation a:hover {
+    color: white;
+    padding-left: 5px;
+}
+
+.page .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 11px;
+    color: #C5D6E0;
+}
+
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 850px) {
+
+    .page .section {
+        padding: 75px 6%;
+    }
+
+    .page .navbar {
+        padding: 25px 6%;
+    }
+
+    .page .nav-links {
+        gap: 15px;
+    }
+
+    .page .nav-links a {
+        font-size: 12px;
+    }
+
+    .page .history-content,
+    .page .meeting-card,
+    .page .meeting-types,
+    .page .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .page .history-content {
+        gap: 40px;
+    }
+
+    .page .history-image {
+        height: 380px;
+    }
+
+    .page .meeting-image {
+        min-height: 350px;
+    }
+
+    .page .contact-container {
+        gap: 40px;
+    }
+
+    .page .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    .page .hero {
+        min-height: 700px;
+        height: 90vh;
+    }
+
+    .page .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .page .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+    }
+
+    .page .hero-content {
+        padding: 30px 7%;
+    }
+
+    .page .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .page .hero-content p {
+        font-size: 14px;
+    }
+
+    .page .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .page .hero-bottom {
+        font-size: 9px;
+    }
+
+    .page .meeting-info {
+        padding: 35px 25px;
+    }
+
+    .page .meeting-details {
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+
+    .page .meeting-type {
+        padding: 35px 25px;
+    }
+
+    .page .contact-form {
+        padding: 30px 20px;
+    }
+
+    .page .footer-main {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .page .footer-bottom {
+        flex-direction: column;
+        line-height: 1.7;
+    }
+}
